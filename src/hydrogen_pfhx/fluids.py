@@ -1,6 +1,6 @@
 import numpy as np
 import CoolProp.CoolProp as CP
-import ortho_para_dynamics, hydrogen_thermodynamics
+from hydrogen_pfhx import ortho_para_dynamics, hydrogen_thermodynamics
 
 
 class FluidStream(object):

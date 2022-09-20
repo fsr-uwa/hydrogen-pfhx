@@ -3,7 +3,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 import pandas as pd
 from operator import sub
-import bvp_model
+from hydrogen_pfhx import bvp_model
 
 
 def post_process(solution, reactant, coolant, reactor, catalyst, boundary_conditions):

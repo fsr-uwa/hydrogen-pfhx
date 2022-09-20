@@ -1,5 +1,5 @@
 import numpy as np
-import pressure_models
+from hydrogen_pfhx import pressure_models
 
 
 def aluminium_thermal_conductivity(temperature):

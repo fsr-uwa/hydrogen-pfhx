@@ -1,5 +1,5 @@
 import numpy as np
-import heat_transfer_models, pressure_models
+from hydrogen_pfhx import heat_transfer_models, pressure_models
 
 
 class PlateFinHex(object):
