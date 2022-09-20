@@ -7,7 +7,7 @@ src/hydrogen_pfhx/__pycache__/
 tests/__pycache__/
 
 # output location
-src/hydrogen_pfhx/output
+output/
 
 # build directories
 build/
