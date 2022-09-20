@@ -39,7 +39,7 @@ def model(configuration_file):
         helium_fraction = configuration['coolant']['helium_fraction']
         coolant = fluids.HeliumNeon(reactor_mass_flowrate_kps, helium_fraction)
     else:
-        coolant = fluids.FluidStream(coolant, reactor_mass_flowrate_kps)
+        coolant = fluids.FluidStream(coolant_name, reactor_mass_flowrate_kps)
 
     # reactor
     reactor = hexs.PlateFinHex(configuration['reactor'])
