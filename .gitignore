@@ -1,2 +1,3 @@
 *.bak
 .venv/
+hydrogen_pfhx/__pycache__/
