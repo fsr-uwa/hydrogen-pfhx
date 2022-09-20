@@ -48,12 +48,12 @@ def model(configuration_file):
     catalyst = catalysts.Catalyst(configuration['catalyst'])
 
     # Step 3. Setup the boundary value problem - initialise a solution
-    boundary_properties = np.array(
+    boundary_properties = np.array((
         configuration['reactant']['x_para'],
         configuration['reactant']['pressure'],
         configuration['reactant']['temperature'],
         configuration['coolant']['pressure'],
-        configuration['coolant']['temperature'])
+        configuration['coolant']['temperature']))
 
     (x_mesh, sol_init) = bvp_model.initialise_solution(reactant, coolant,
                                                        reactor, catalyst, boundary_properties, configuration['simulation'])
