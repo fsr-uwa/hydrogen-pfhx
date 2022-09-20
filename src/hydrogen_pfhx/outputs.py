@@ -35,17 +35,15 @@ def post_process(solution, reactant, coolant, reactor, catalyst, boundary_condit
     results_array = np.transpose(np.vstack(
         [z, P_reactant, P_coolant, T_reactant, T_coolant, u_reactant, u_coolant, xp_equil, xp_reactant]))
     results = pd.DataFrame(results_array, columns=columns)
-    
-    # save results
-    #TODO - add option for specifying save name.
-    if not os.path.isdir('output'):
-        os.mkdir('output')
-    results.to_csv('output/results.csv')
-
-    # plot results.
-    plot_results(results)
 
     return results
+
+def save_results(results, file_path='output/results.csv'):
+    # save results
+    if (file_path[:7] == 'output/') & (not os.path.isdir('output')):
+        os.mkdir('output')
+        
+    results.to_csv(file_path)
 
 
 def plot_results(results):
