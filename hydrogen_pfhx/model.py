@@ -67,7 +67,7 @@ def model(configuration_file):
                          x_mesh, sol_init, tol=configuration['simulation']['tolerance'], max_nodes=1000, verbose=2)
 
     # Step 5. Post-process & plot results.
-    results = post_process(solution)
+    results = post_process(solution, reactant, coolant, reactor, catalyst, boundary_properties)
 
     return results
 
