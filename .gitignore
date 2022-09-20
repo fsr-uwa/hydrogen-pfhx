@@ -4,6 +4,7 @@
 # virtual env & pycache
 .venv/
 hydrogen_pfhx/__pycache__/
+tests/__pycache__/
 
 # output location
 hydrogen_pfhx/output
