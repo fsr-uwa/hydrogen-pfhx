@@ -76,10 +76,10 @@ class PlateFinHex(object):
         thca = self.single_channel_area() * self.hot_channels()
         return thca
 
-    def calculate_heat_transfer_duty(self, reactant_temperature, coolant_temperature, var):
+    def calculate_heat_transfer_duty(self, reactant_temperature, coolant_temperature):
         wall_temperature = (coolant_temperature + reactant_temperature) / 2
         (U, terms) = self.calculate_overall_heat_transfer_coefficient(
-            wall_temperature, var)
+            wall_temperature)
         Q = U*self.hydraulic_perimeter()*(reactant_temperature - coolant_temperature) * \
             self.hot_channels()  # W/m
         return Q, terms
@@ -99,11 +99,11 @@ class PlateFinHex(object):
             coolant.velocity**2 / (self.hydraulic_diameter())
         return delta_p
 
-    def calculate_overall_heat_transfer_coefficient(self, wall_temperatures, var):
+    def calculate_overall_heat_transfer_coefficient(self, wall_temperatures):
         solid_thermal_conductivity = np.mean(
             heat_transfer_models.aluminium_thermal_conductivity(wall_temperatures))
         term_1 = self.hydraulic_diameter()/(8*self.k_hot)
-        term_2 = 1/(self.h_hot*var)
+        term_2 = 1/(self.h_hot)
         term_3 = self.fin_thickness / solid_thermal_conductivity
         term_4 = 1/(self.h_cold)
         terms = [term_1, term_2, term_3, term_4]
