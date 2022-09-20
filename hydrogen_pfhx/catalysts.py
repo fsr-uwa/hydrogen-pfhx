@@ -1,11 +1,11 @@
 # catalyst object
 
 class Catalyst(object):
-    def __init__(self, solid_fraction, particle_diameter, density):
-        self.solid_fraction = solid_fraction
-        self.particle_diameter = particle_diameter
-        self.density = density
-        self.void_fraction = 1 - solid_fraction
+    def __init__(self, catalyst_configuration):
+        self.solid_fraction = catalyst_configuration['solid_fraction']
+        self.particle_diameter = catalyst_configuration['diameter']
+        self.density = catalyst_configuration['density']
+        self.void_fraction = 1 - catalyst_configuration['solid_fraction']
 
     def calculate_catalyst_mass(self, reaction_side_volume):
         catalyst_volume = reaction_side_volume * self.solid_fraction
