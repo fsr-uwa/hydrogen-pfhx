@@ -15,13 +15,13 @@ def model(configuration_file = 'src/configs/default_configuration.yaml'):
 
     # Step 2. Create a reactant, coolant, reactor & catalyst
     # reactant
-    reactant_mass_flowrate_kps = tpd_to_kps(
+    reactant_mass_flowrate_kps = utils.tpd_to_kps(
         configuration['reactant']['mass_flow_rate'])
     reactant = fluids.Hydrogen(reactant_mass_flowrate_kps)
 
     # coolant
     coolant_name = configuration['coolant']['fluid']
-    reactor_mass_flowrate_kps = tpd_to_kps(
+    reactor_mass_flowrate_kps = utils.tpd_to_kps(
         configuration['coolant']['mass_flow_rate'])
     if coolant_name == 'Hydrogen':
         xp_cool_inlet = configuration['coolant']['x_para']
@@ -60,6 +60,6 @@ def model(configuration_file = 'src/configs/default_configuration.yaml'):
                          x_mesh, sol_init, tol=configuration['simulation']['tolerance'], max_nodes=1000, verbose=2)
 
     # Step 5. Post-process & plot results.
-    results = post_process(solution, reactant, coolant, reactor, catalyst, boundary_properties)
+    results = outputs.post_process(solution, reactant, coolant, reactor, catalyst, boundary_properties)
 
     return results
