@@ -1,3 +1,4 @@
+import os
 import numpy as np
 import matplotlib.pyplot as plt
 import pandas as pd
@@ -34,6 +35,12 @@ def post_process(solution, reactant, coolant, reactor, catalyst, boundary_condit
     results_array = np.transpose(np.vstack(
         [z, P_reactant, P_coolant, T_reactant, T_coolant, u_reactant, u_coolant, xp_equil, xp_reactant]))
     results = pd.DataFrame(results_array, columns=columns)
+    
+    # save results
+    #TODO - add option for specifying save name.
+    if not os.path.isdir('output'):
+        os.mkdir('output')
+    results.to_csv('output/results.csv')
 
     # plot results.
     plot_results(results)
@@ -146,7 +153,7 @@ def plot_results(results):
 
     fig.subplots_adjust(left=0.08, top=0.88, bottom=0.2, right=0.98)
     
-    plt.show()
+    plt.savefig('output/profiles.png')
 
 
 def get_aspect(ax):
