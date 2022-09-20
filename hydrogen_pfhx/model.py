@@ -8,8 +8,12 @@ from outputs import post_process
 from utils import tpd_to_kps
 
 
-def model(configuration_file='configs/default_configuration.yaml'):
+def model(configuration_file):
     # Step 1. read config file
+    if not configuration_file:
+        # use default config file if not specified.
+        configuration_file = 'hydrogen_pfhx/configs/default_configuration.yaml'
+        
     with open(configuration_file, "r") as stream:
         try:
             configuration = yaml.safe_load(stream)
