@@ -33,7 +33,7 @@ def post_process(solution, reactant, coolant, reactor, catalyst, boundary_condit
                'Reactant velocity (m/s)', 'Coolant velocity (m/s)', 'Equilibrium para-hydrogen fraction (mol/mol)', 'Actual para-hydrogen fraction (mol/mol)')
     results_array = np.transpose(np.vstack(
         [z, P_reactant, P_coolant, T_reactant, T_coolant, u_reactant, u_coolant, xp_equil, xp_reactant]))
-    results = pd.dataframe(results_array, columns=columns)
+    results = pd.DataFrame(results_array, columns=columns)
 
     # plot results.
     plot_results(results)
