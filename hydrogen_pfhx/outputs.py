@@ -145,6 +145,8 @@ def plot_results(results):
     fig.tight_layout()
 
     fig.subplots_adjust(left=0.08, top=0.88, bottom=0.2, right=0.98)
+    
+    plt.show()
 
 
 def get_aspect(ax):
