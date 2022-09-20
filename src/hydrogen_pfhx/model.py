@@ -70,16 +70,3 @@ def model(configuration_file):
     results = post_process(solution, reactant, coolant, reactor, catalyst, boundary_properties)
 
     return results
-
-
-
-if __name__ == '__main__':
-    # setup configuration file argument
-    import argparse
-    parser = argparse.ArgumentParser(description='Configuration file setup.')
-    parser.add_argument('--configuration_file', metavar='path', required=False,
-                        help='path to config file')
-    args = parser.parse_args()
-
-    # run model
-    results = model(configuration_file=args.configuration_file)
