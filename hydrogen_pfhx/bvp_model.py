@@ -3,7 +3,7 @@ functions to model boundary value problem for PFHX
 """
 
 import numpy as np
-from . import ortho_para_dynamics
+import ortho_para_dynamics
 
 # Main 1D BVP model of h2 conversion reactor.
 def bvp_function(z, process_properties, additional_parameters):

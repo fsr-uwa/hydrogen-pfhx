@@ -1,5 +1,5 @@
 import numpy as np
-from . import pressure_models
+import pressure_models
 
 
 def aluminium_thermal_conductivity(temperature):

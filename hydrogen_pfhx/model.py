@@ -3,7 +3,7 @@
 import yaml
 import numpy as np
 from scipy.integrate import solve_bvp
-from . import (fluids, catalysts, hexs, bvp_model, helium_neon)
+import fluids, catalysts, hexs, bvp_model, helium_neon
 from .outputs import post_process
 from .utils import tpd_to_kps
 
