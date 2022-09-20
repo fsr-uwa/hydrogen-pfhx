@@ -3,18 +3,18 @@ import heat_transfer_models, pressure_models
 
 
 class PlateFinHex(object):
-    def __init__(self, length, width, height, fin_thickness, fin_pitch, fin_height, seration_length):
+    def __init__(self, reactor_configuration):
         # keeping constant for now
         self.hot_fraction = 0.5
 
         # input
-        self.length = length
-        self.width = width
-        self.height = height
-        self.fin_thickness = fin_thickness
-        self.fin_pitch = fin_pitch  # (in width direction)
-        self.fin_height = fin_height    # (in height direction)
-        self.seration_length = seration_length
+        self.length = reactor_configuration['length']
+        self.width = reactor_configuration['width']
+        self.height = reactor_configuration['height']
+        self.fin_thickness = reactor_configuration['fin_thickness']
+        self.fin_pitch = reactor_configuration['fin_pitch']  # (in width direction)
+        self.fin_height = reactor_configuration['fin_height']    # (in height direction)
+        self.seration_length = reactor_configuration['seration_length']
 
     def characteristic_length(self):
         cl = self.hydraulic_diameter
