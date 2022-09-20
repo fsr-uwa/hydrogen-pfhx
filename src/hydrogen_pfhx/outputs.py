@@ -40,7 +40,7 @@ def post_process(solution, reactant, coolant, reactor, catalyst, boundary_condit
     #TODO - add option for specifying save name.
     if not os.path.isdir('output'):
         os.mkdir('output')
-    results.to_csv('hydrogen_pfhx/output/results.csv')
+    results.to_csv('output/results.csv')
 
     # plot results.
     plot_results(results)
@@ -153,7 +153,7 @@ def plot_results(results):
 
     fig.subplots_adjust(left=0.08, top=0.88, bottom=0.2, right=0.98)
     
-    plt.savefig('hydrogen_pfhx/output/profiles.png')
+    plt.savefig('output/profiles.png')
 
 
 def get_aspect(ax):
