@@ -4,8 +4,8 @@ import yaml
 import numpy as np
 from scipy.integrate import solve_bvp
 import fluids, catalysts, hexs, bvp_model, helium_neon
-from .outputs import post_process
-from .utils import tpd_to_kps
+from outputs import post_process
+from utils import tpd_to_kps
 
 
 def model(configuration_file='configs/default_configuration.yaml'):
