@@ -5,13 +5,8 @@ import numpy as np
 from scipy.integrate import solve_bvp
 from hydrogen_pfhx import (fluids, catalysts, hexs, bvp_model, helium_neon, outputs, utils)
 
-
-def model(configuration_file):
+def model(configuration_file = 'src/configs/default_configuration.yaml'):
     # Step 1. read config file
-    if not configuration_file:
-        # use default config file if not specified.
-        configuration_file = 'hydrogen_pfhx/configs/default_configuration.yaml'
-        
     with open(configuration_file, "r") as stream:
         try:
             configuration = yaml.safe_load(stream)
