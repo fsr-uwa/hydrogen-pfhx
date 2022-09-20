@@ -3,11 +3,11 @@
 
 # virtual env & pycache
 .venv/
-hydrogen_pfhx/__pycache__/
+src/hydrogen_pfhx/__pycache__/
 tests/__pycache__/
 
 # output location
-hydrogen_pfhx/output
+src/hydrogen_pfhx/output
 
 # build directories
 build/
