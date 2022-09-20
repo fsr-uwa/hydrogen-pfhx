@@ -2,7 +2,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 import pandas as pd
 from operator import sub
-from . import bvp_model
+import bvp_model
 
 
 def post_process(solution, reactant, coolant, reactor, catalyst, boundary_conditions):
