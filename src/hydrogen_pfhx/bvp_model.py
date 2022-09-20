@@ -3,7 +3,7 @@ functions to model boundary value problem for PFHX
 """
 
 import numpy as np
-import ortho_para_dynamics
+from hydrogen_pfhx import ortho_para_dynamics
 
 # Main 1D BVP model of h2 conversion reactor.
 def bvp_function(z, process_properties, additional_parameters):
@@ -50,9 +50,8 @@ def bvp_function(z, process_properties, additional_parameters):
         dxpdz = dNpdz * reactant.molecular_mass / reactant.mass_flow_rate
 
         # heat transfer calculations
-        (Q_transfer, terms) = reactor.calculate_heat_transfer_duty(
+        (Q_transfer, _) = reactor.calculate_heat_transfer_duty(
             reactant.temperature, coolant.temperature)
-        term_matrix[zi, :] = terms
         hoc = reactant.get_heat_of_conversion()
         Q_hot = -Q_transfer - hoc * dNpdz
 
