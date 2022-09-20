@@ -78,7 +78,7 @@ def plot_results(results):
 
     x_data = results['Z (m)']
     num_params = 3
-    xlims = (0, 6)
+    xlims = (0, np.max(x_data))
     l1 = 'reactant'
 
     nr = 1
