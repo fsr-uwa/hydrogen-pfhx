@@ -14,12 +14,10 @@ classifiers = [
 ]
 dependencies = [
     "CoolProp",
-    "docopt",
     "matplotlib",
-    "msvc-runtime",
     "numpy",
     "pandas",
-    "PyYAML",
+    "pyyaml",
     "scipy",
 ]
 requires-python = ">=3.8"
