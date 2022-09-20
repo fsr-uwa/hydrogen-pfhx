@@ -1,6 +1,6 @@
 [project]
 name = "hydrogen_pfhx"
-version = "0.0.3"
+version = "0.0.4"
 description = "Chemical engineering model of hydrogen plate-fin heat exchanger"
 readme = "README.md"
 keywords = ['hydrogen','pfhx','heat exchanger','ortho','para','engineering']
@@ -13,14 +13,14 @@ classifiers = [
     "License :: OSI Approved :: BSD License"
 ]
 dependencies = [
-    "CoolProp",
-    "matplotlib",
-    "numpy",
-    "pandas",
-    "pyyaml",
-    "scipy",
+    "CoolProp >= 6.4.1",
+    "matplotlib >= 3.5.2",
+    "numpy >= 1.23.0",
+    "pandas >= 1.5.0",
+    "pyyaml >= 6.0",
+    "scipy >= 1.9.1",
 ]
-requires-python = ">=3.8"
+requires-python = ">=3.9"
 
 [project.urls]
 url = "https://github.com/fsr-uwa/hydrogen-pfhx"
