@@ -8,7 +8,7 @@ from .outputs import post_process
 from .utils import tpd_to_kps
 
 
-def model(configuration_file='default_configuration.yaml'):
+def model(configuration_file='configs/default_configuration.yaml'):
     # Step 1. read config file
     with open(configuration_file, "r") as stream:
         try:
